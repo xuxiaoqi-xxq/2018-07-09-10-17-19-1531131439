@@ -43,7 +43,7 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         String introduce = super.introduce() + " I am a Teacher. ";
-        if(classes.size() > 0) {
+        if (classes.size() > 0) {
             introduce += "I teach Class " + formatClassesOutput(classes) + ".";
         } else {
             introduce += "I teach No Class.";
@@ -51,9 +51,9 @@ public class Teacher extends Person {
         return introduce;
     }
 
-    public String introduceWith(Student student){
+    public String introduceWith(Student student) {
         String introduce = super.introduce() + " I am a Teacher. ";
-        if(isTeaching(student)) {
+        if (isTeaching(student)) {
             introduce += "I teach " + student.getName() + ".";
         } else {
             introduce += "I don't teach Jerry.";
@@ -62,8 +62,8 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student student) {
-        for(Klass klass: classes) {
-            if(klass.isIn(student)) {
+        for (Klass klass : classes) {
+            if (klass.isIn(student)) {
                 return true;
             }
         }
@@ -72,7 +72,7 @@ public class Teacher extends Person {
 
     private String formatClassesOutput(LinkedList<Klass> classes) {
         String classesString = "";
-        for(Klass klass: classes){
+        for (Klass klass : classes) {
             classesString += klass.getNumber() + ", ";
         }
         return classesString.substring(0, classesString.length() - 2);

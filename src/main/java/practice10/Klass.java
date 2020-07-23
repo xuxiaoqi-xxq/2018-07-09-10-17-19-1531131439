@@ -30,13 +30,13 @@ public class Klass {
 
     public void assignLeader(Student student) {
         boolean isStudentInClass = false;
-        for(Student stu: students){
-            if(stu.getId() == student.getId()){
+        for (Student stu : students) {
+            if (stu.getId() == student.getId()) {
                 isStudentInClass = true;
                 break;
             }
         }
-        if(isStudentInClass){
+        if (isStudentInClass) {
             leader = student;
         } else {
             System.out.println("It is not one of us.");
@@ -50,8 +50,8 @@ public class Klass {
     }
 
     public boolean isIn(Student student) {
-        for(Student stu: students) {
-            if(stu.getKlass().getNumber() == student.getKlass().getNumber()) {
+        for (Student stu : students) {
+            if (stu.getKlass().getNumber() == student.getKlass().getNumber()) {
                 return true;
             }
         }
