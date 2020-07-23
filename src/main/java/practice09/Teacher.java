@@ -25,7 +25,7 @@ public class Teacher extends Person {
     public String introduce() {
         String introduce = super.introduce();
         introduce += " I am a Teacher. ";
-        if(klass != null){
+        if (klass != null) {
             introduce += "I teach Class " + klass.getNumber() + ".";
         } else {
             introduce += "I teach No Class.";
@@ -33,9 +33,9 @@ public class Teacher extends Person {
         return introduce;
     }
 
-    public String introduceWith(Student student){
+    public String introduceWith(Student student) {
         String introduce = super.introduce() + " I am a Teacher. ";
-        if(student.getKlass().getNumber() == klass.getNumber()) {
+        if (student.getKlass().getNumber() == klass.getNumber()) {
             introduce += "I teach " + student.getName() + ".";
         } else {
             introduce += "I don't teach Jerry.";
