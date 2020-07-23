@@ -12,4 +12,4 @@ introduce方法返回一个字符串形如：
 再写一个Worker类继承Person类，只有name，age属性。也有一个introduce方法，
 introduce方法返回一个字符串形如：
 
->I am a Worker. I have a job.
+w

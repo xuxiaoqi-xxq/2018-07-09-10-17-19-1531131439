@@ -23,7 +23,7 @@ public class Teacher extends Person implements JoinClassListener{
         super(id, name, age);
         this.classes = classes;
         for(Klass klass: classes) {
-            klass.registerTeacher(this);
+            klass.registerJoinClassListener(this);
         }
     }
 

@@ -11,12 +11,12 @@ public class Klass {
 
     private List<Student> students;
 
-    private List<Teacher> teachers;
+    private List<JoinClassListener> joinClassListeners;
 
     public Klass(int number) {
         this.number = number;
         this.students = new ArrayList();
-        this.teachers = new ArrayList();
+        this.joinClassListeners = new ArrayList();
     }
 
     public int getNumber() {
@@ -39,22 +39,21 @@ public class Klass {
                 break;
             }
         }
-        String s = "";
         if(isStudentInClass){
             leader = student;
-            for(Teacher teacher: teachers) {
-                teacher.updateLeader(leader);
+            for(JoinClassListener joinClassListener: joinClassListeners) {
+                joinClassListener.updateLeader(leader);
             }
         } else {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         }
     }
 
 
     public void appendMember(Student student) {
         students.add(student);
-        for(Teacher teacher: teachers) {
-            teacher.updateStudent(student);
+        for(JoinClassListener joinClassListener: joinClassListeners) {
+            joinClassListener.updateStudent(student);
         }
     }
 
@@ -67,8 +66,8 @@ public class Klass {
         return false;
     }
 
-    public void registerTeacher(Teacher teacher) {
-        teachers.add(teacher);
+    public void registerJoinClassListener(JoinClassListener joinClassListener) {
+        joinClassListeners.add(joinClassListener);
     }
 
 }
