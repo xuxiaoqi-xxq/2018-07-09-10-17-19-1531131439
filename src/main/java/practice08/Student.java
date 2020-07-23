@@ -20,7 +20,7 @@ public class Student extends Person {
     @Override
     public String introduce() {
         String introduce = super.introduce() + " I am a Student. ";
-        if(klass.getLeader() == this){
+        if (klass.getLeader() == this) {
             introduce += "I am Leader of Class " + klass.getNumber() + ".";
         } else {
             introduce += "I am at Class " + klass.getNumber() + ".";
